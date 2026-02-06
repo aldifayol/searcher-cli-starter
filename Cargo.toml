@@ -1,7 +1,14 @@
 [package]
 name = "searcher-cli-starter"
-version = "0.1.0"
+version = "0.2.0"
 edition = "2024"
+authors = ["Aldi <aldi@example.com>"]
+description = "A fast, flexible command-line text search tool with regex support"
+readme = "README.md"
+repository = "https://github.com/yourusername/searcher-cli-starter"
+license = "MIT OR Apache-2.0"
+keywords = ["cli", "search", "grep", "text", "regex"]
+categories = ["command-line-utilities", "text-processing"]
 
 [[bin]]
 name = "searcher"
@@ -10,6 +17,7 @@ path = "src/main.rs"
 [dependencies]
 clap = { version = "4.4", features = ["derive"] }
 anyhow = "1.0"
+regex = "1.10"
 
 [dev-dependencies]
 assert_cmd = "2.0"
