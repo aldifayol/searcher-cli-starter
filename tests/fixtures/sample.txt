@@ -1,0 +1,6 @@
+The quick brown fox jumps over the lazy dog
+Rust is a systems programming language
+Hello world from Rust
+Another line without the search term
+Rust makes systems programming accessible
+Final line of the test file
