@@ -44,6 +44,8 @@ cargo install searcher-cli-starter
 
 ## Quick Start
 
+### As a CLI Tool
+
 ```bash
 # Basic search
 searcher "pattern" file.txt
@@ -60,6 +62,42 @@ searcher -r "^\[ERROR\]" logfile.txt
 # Combine multiple flags
 searcher -i -n -r "warning|error" file.txt
 ```
+
+### As a Library
+
+Add to your `Cargo.toml`:
+
+```toml
+[dependencies]
+searcher-cli-starter = "0.2.0"
+```
+
+Use in your code:
+
+```rust
+use searcher_cli_starter::{Matcher, search_lines};
+use std::fs::File;
+
+fn main() -> Result<(), Box<dyn std::error::Error>> {
+    // Open a file
+    let file = File::open("data.txt")?;
+
+    // Create a matcher (pattern, case_insensitive, use_regex)
+    let matcher = Matcher::new("error", true, false)?;
+
+    // Search the file
+    let results = search_lines(file, &matcher)?;
+
+    // Process results
+    for result in results {
+        println!("Line {}: {}", result.line_number, result.content);
+    }
+
+    Ok(())
+}
+```
+
+See `examples/library_usage.rs` for more detailed examples.
 
 ## Usage
 
