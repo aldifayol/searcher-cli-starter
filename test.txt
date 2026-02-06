@@ -1,0 +1,4 @@
+Hello Aldi 
+Rust is absolutely amazing
+Command lines are fun
+Rust is so fast
